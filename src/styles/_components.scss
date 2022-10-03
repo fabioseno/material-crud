@@ -1,0 +1,12 @@
+.table-hover .mat-row {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #efefef;
+  }
+}
+
+.button-group {
+    display: flex;
+    gap: 5px;
+}

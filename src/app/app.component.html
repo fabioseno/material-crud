@@ -1,11 +1,13 @@
 <div fxLayout="column" fxFill>
-    <mat-toolbar color="white">
+    <mat-toolbar color="primary">
         <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
             <mat-icon>menu</mat-icon>
         </button> -->
         <span>My Application</span>
         <span class="example-spacer"></span>
-        Fábio Akira Yoshida
+
+        <span class="profile-name">Fábio Akira Yoshida</span>
+        
 
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Open more settings">
             <mat-icon>account_circle</mat-icon>
@@ -21,6 +23,7 @@
             </button>
         </mat-menu>
     </mat-toolbar>
+    <mat-progress-bar mode="indeterminate" *ngIf="displayLoader"></mat-progress-bar>
 
     <div class="py-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <router-outlet></router-outlet>

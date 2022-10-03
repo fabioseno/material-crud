@@ -5,8 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { EntityListComponent } from './entity-list/entity-list.component';
-import { EntityDetailsComponent } from './entity-details/entity-details.component';
+import { EntityListComponent } from './entity/components/entity-list/entity-list.component';
+import { EntityDetailsComponent } from './entity/components/entity-details/entity-details.component';
+import { BreadcrumbComponent } from './_shared/components/breadcrumb/breadcrumb.component';
+import { PageHeaderComponent } from './_shared/components/page-header/page-header.component';
 
 
 // TODO: These imports can be moved to a shared/core module
@@ -23,12 +25,19 @@ import { MatSortModule } from '@angular/material/sort';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatRippleModule } from '@angular/material/core';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { LoaderService } from './_shared/services/loader.service';
+
 
 @NgModule({
     declarations: [
         AppComponent,
         EntityListComponent,
-        EntityDetailsComponent
+        EntityDetailsComponent,
+        BreadcrumbComponent,
+        PageHeaderComponent
     ],
     imports: [
         BrowserModule,
@@ -41,14 +50,17 @@ import { MatChipsModule } from '@angular/material/chips';
         MatCardModule,
         MatFormFieldModule,
         MatTableModule,
-        MatInputModule,
         MatPaginatorModule,
         MatSortModule,
         DragDropModule,
         MatRippleModule,
-        MatChipsModule
+        MatChipsModule,
+        MatInputModule,
+        MatSelectModule,
+        MatTooltipModule,
+        MatProgressBarModule
     ],
-    providers: [],
+    providers: [LoaderService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

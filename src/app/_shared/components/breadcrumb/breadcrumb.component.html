@@ -1,0 +1,11 @@
+<ul>
+    <li class="link"
+        [class]="{ 'link-disabled': path.disabled === true || path.disabled === undefined || path.disabled === null  }"
+        *ngFor="let path of paths; let i = index">
+        <span>
+            <a [routerLink]="[path.path]" *ngIf="!path.disabled">{{ path.label}}</a>
+            <span *ngIf="path.disabled">{{ path.label}}</span>
+        </span>
+        <span *ngIf="i !== paths.length - 1">&nbsp;/&nbsp;</span>
+    </li>
+</ul>

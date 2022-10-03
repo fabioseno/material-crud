@@ -1,0 +1,13 @@
+ul {
+    font-size: 14px;
+    display: flex;
+    color: #666666;
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            color: #444444;
+        }
+    }
+}
