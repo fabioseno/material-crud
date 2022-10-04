@@ -1,31 +1,9 @@
 <div fxLayout="column" fxFill>
-    <mat-toolbar color="primary">
-        <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
-        </button> -->
-        <span>My Application</span>
-        <span class="example-spacer"></span>
-
-        <span class="profile-name">Fábio Akira Yoshida</span>
-        
-
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Open more settings">
-            <mat-icon>account_circle</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-                <mat-icon>password</mat-icon>
-                <span>Change password</span>
-            </button>
-            <button mat-menu-item>
-                <mat-icon>logout</mat-icon>
-                <span>Logout</span>
-            </button>
-        </mat-menu>
-    </mat-toolbar>
+    <app-toolbar></app-toolbar>
     <mat-progress-bar mode="indeterminate" *ngIf="displayLoader"></mat-progress-bar>
 
     <div class="py-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <router-outlet></router-outlet>
     </div>
+    <app-footer></app-footer>
 </div>

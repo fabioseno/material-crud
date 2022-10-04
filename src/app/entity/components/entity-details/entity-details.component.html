@@ -1,35 +1,50 @@
 <app-page-header pageTitle="Entity details title" [breadcrumb]="breadcrumbPaths">
-    <button mat-raised-button color="primary">Save</button>
-    <button mat-raised-button color="warn">Delete</button>
+    <button mat-stroked-button color="primary" (click)="goBack()">Go back</button>
+    <button mat-raised-button color="primary" (click)="create()" [loading]="buttons.create.isLoading"
+        *ngIf="isNew">Create entity</button>
+    <button mat-raised-button color="primary" (click)="update()" [loading]="buttons.update.isLoading"
+        *ngIf="!isNew">Update entity</button>
+    <button mat-raised-button color="warn" (click)="delete()" [loading]="buttons.delete.isLoading" *ngIf="!isNew">Delete
+        entity</button>
 </app-page-header>
 
 <mat-card>
     <mat-card-title>Basic data</mat-card-title>
     <mat-card-content>
-        <mat-form-field appearance="outline">
-            <mat-label>Date</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Category</mat-label>
-            <mat-select>
-                <mat-option value="R">Red</mat-option>
-                <mat-option value="B">Blue</mat-option>
-                <mat-option value="A">Amber</mat-option>
-                <mat-option value="G">Green</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Status</mat-label>
-            <mat-select>
-                <mat-option value="O">Open</mat-option>
-                <mat-option value="C">Closed</mat-option>
-            </mat-select>
-        </mat-form-field>
+        <div class="grid grid-cols-12 gap-5">
+            <div class="col-span-12 sm:col-span-12 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Field 1</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-span-12 sm:col-span-12 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-span-12 sm:col-span-12 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Category</mat-label>
+                    <mat-select>
+                        <mat-option value="R">Red</mat-option>
+                        <mat-option value="B">Blue</mat-option>
+                        <mat-option value="A">Amber</mat-option>
+                        <mat-option value="G">Green</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-span-12 sm:col-span-12 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Status</mat-label>
+                    <mat-select>
+                        <mat-option value="O">Open</mat-option>
+                        <mat-option value="C">Closed</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
     </mat-card-content>
 
 </mat-card>

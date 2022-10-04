@@ -5,10 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { LoaderService } from './_shared/services/loader/loader.service';
+import { ToasterService } from './_shared/services/toaster/toaster.service';
+
 import { EntityListComponent } from './entity/components/entity-list/entity-list.component';
 import { EntityDetailsComponent } from './entity/components/entity-details/entity-details.component';
 import { BreadcrumbComponent } from './_shared/components/breadcrumb/breadcrumb.component';
 import { PageHeaderComponent } from './_shared/components/page-header/page-header.component';
+import { ToolbarComponent } from './_shared/components/toolbar/toolbar.component';
+import { FooterComponent } from './_shared/components/footer/footer.component';
+import { ConfirmationDialogComponent } from './_shared/components/confirmation-dialog/confirmation-dialog.component';
 
 
 // TODO: These imports can be moved to a shared/core module
@@ -28,8 +34,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { LoaderService } from './_shared/services/loader.service';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatButtonLoadingDirective } from './_shared/directives/button-loader';
 
 @NgModule({
     declarations: [
@@ -37,7 +44,11 @@ import { LoaderService } from './_shared/services/loader.service';
         EntityListComponent,
         EntityDetailsComponent,
         BreadcrumbComponent,
-        PageHeaderComponent
+        PageHeaderComponent,
+        ToolbarComponent,
+        FooterComponent,
+        ConfirmationDialogComponent,
+        MatButtonLoadingDirective
     ],
     imports: [
         BrowserModule,
@@ -58,9 +69,11 @@ import { LoaderService } from './_shared/services/loader.service';
         MatInputModule,
         MatSelectModule,
         MatTooltipModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatDialogModule,
+        MatSnackBarModule
     ],
-    providers: [LoaderService],
+    providers: [LoaderService, ToasterService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

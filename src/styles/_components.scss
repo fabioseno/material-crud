@@ -1,12 +1,33 @@
-.table-hover .mat-row {
-  cursor: pointer;
+// mat-table
+.mat-table {
+  &.table-hover .mat-row {
+    cursor: pointer;
 
-  &:hover {
-    background-color: #efefef;
+    &:hover {
+      background-color: #efefef;
+    }
+  }
+  .text-center {
+    justify-content: center;
   }
 }
 
-.button-group {
-    display: flex;
-    gap: 5px;
+// mat-snack-bar
+.mat-snack-bar-container.snack-success {
+  background-color: rgb(76, 175, 80);
+  color: #ffffff;
+}
+
+// form-field
+mat-form-field {
+  width: 100%;
+}
+
+// mat-button-loading
+.mat-button-loading {
+  .mat-progress-spinner {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+  }
 }

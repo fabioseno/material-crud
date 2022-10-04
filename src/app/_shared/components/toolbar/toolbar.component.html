@@ -1,0 +1,27 @@
+<mat-toolbar class="mat-elevation-z4" color="primary">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button> -->
+    <span class="logo">
+        <img src="assets/logo.png" alt="Logo" />
+    </span>
+    <span>My Application</span>
+    <span class="spacer"></span>
+
+    <span class="profile-name">Fábio Akira Yoshida</span>
+
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Open more settings">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>password</mat-icon>
+            <span>Change password</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>
