@@ -70,9 +70,9 @@ export class EntityDetailsComponent implements OnInit {
     }
 
     async delete() {
-        this.buttons.delete.isLoading = true;
-
         if (await this.dialog.showConfirm('entity', 'delete')) {
+            this.buttons.delete.isLoading = true;
+            
             setTimeout(() => {
                 this.buttons.delete.isLoading = false;
                 this.toaster.show('Entity successfully deleted');
